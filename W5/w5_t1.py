@@ -28,7 +28,3 @@ data.append(split_ni[4])
 
 x = nisit(data[0],data[1],data[2],data[3],data[4])
 x.shownisit()
-
-
-
-        
