@@ -22,7 +22,7 @@ def insertTousers(fname,lname,emaill,sex,age):
     try:
         conn=sqlite3.connect(r"C:\Users\tuesd\Desktop\Phontip_python\example.db")
         c=conn.cursor()
-        sql='''INSERT INTO users (Name,lastname,Email,Sex,Age,Year)VALUES(?,?,?,?,?)'''
+        sql='''INSERT INTO users (Name,lastname,Email,Sex,Age)VALUES(?,?,?,?,?)'''
         data=(fname,lname,emaill,sex,age)
         c.execute(sql,data)
         conn.commit()
@@ -81,14 +81,14 @@ while True:
         show()
     elif Choice =='e':
         os.system('cls')
-        change=input(' กรอกตําแหน่ง(ตัวเลข)ที่ต้องการแก้ไขข้อมูล กรอก 0 หากไม้ต้องการแก้ไขข้อมูล :')
-        if change!='0':
+        change=input(' กรอกตําแหน่ง(ตัวเลข)ที่ต้องการแก้ไขข้อมูล กรอก n หากไม้ต้องการแก้ไขข้อมูล :')
+        if change!='n':
             addsd()
             editsdinfo(fname,lname,emaill,sex,age,change)                           
     elif Choice=='d':
         os.system('cls')
-        delete=input('กรอกตําแหน่ง(ตัวเลข)ที่ต้องการลบข้อมูล กรอก 0 หากไม้ต้องการแก้ไขข้อมูล :')
-        if delete !='0':
+        delete=input('กรอกตําแหน่ง(ตัวเลข)ที่ต้องการลบข้อมูล กรอก n หากไม้ต้องการแก้ไขข้อมูล :')
+        if delete !='n':
             deletesd(delete)
     elif Choice=='x':
         os.system('cls')
